@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+
+    <title>Camera Web App</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/style/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/style/input.css" rel="stylesheet">
+
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="static/webcam.js"></script>
+
+  </head>
+
+  <body>
+  <h4>Welcome! Please allow this application to access your camera, then press "Take my picture" at the bottom of the page. Afterwards, you will receive a completion code to copy back into the survey.
+  <div class="background-image"></div>
+  <div class="container">
+      <div class="content">
+<div class = "img">
+			    	    <div id="my_camera" style="width:640px; height:480px;"></div>
+                    </div>
+                    <!-- Static Header -->
+
+<div style="text-align:center;">
+
+<!-- <form name="myForm" action="demo_form.asp" onsubmit="return validateForm()" method="post">
+Mechanical Turk ID: <input type="text" name="turkID">
+</form> -->
+
+<br>
+  <a href="javascript:void(take_snapshot())" class="btn btn-success">Take my picture</a>
+
+ </div>
+      </div></div>
+
+    <script language="JavaScript">
+        // var validated = true
+        Webcam.attach( '#my_camera' );
+
+        // function validateForm() {
+        //   var x = document.forms["myForm"]["turkID"].value;
+        //   if (x == null || x == "") {
+        //      alert("Mechanical Turk ID must be filled out");
+        //        validated =  false;
+        //     }
+        //    }
+
+        function take_snapshot() {
+            var data_uri = Webcam.snap();
+            Webcam.upload( data_uri, '/upload/{{ myID }}', function(code, text) {
+                window.location.href = "/go/end"
+            // var x = document.forms["myForm"]["turkID"].value;
+            // if (x == null || x == "") {
+            //  alert("Mechanical Turk ID must be filled out");
+            // } else {
+              
+            // }
+            } );
+        }
+    </script>
+  </body>
+</html>
+
+
+
+
+

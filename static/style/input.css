@@ -1,0 +1,59 @@
+.margin-top {
+    margin-top: 50px;
+}
+
+.img {
+    margin: 55px 0;
+    width: 650px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
+.intro{
+    text-align: center;
+     z-index: 9999;
+    margin-top: 30px;
+}
+
+.intro h1 {
+    font-size: 50pt;
+    margin-bottom: 0px;
+}
+
+.img2 {
+    margin-top: -420px;
+    width: 650px;
+    display: block;
+    margin-left: 350px;
+    margin-right: auto
+}
+
+.img1 {
+    margin-top: 30px;
+    width: 650px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.centerme{
+   margin-left: auto;
+   margin-right: auto;
+   width: 320px;
+}
+
+.trans {
+    margin-top: 30px;
+    background-color: rgba(222,222,222,0.8);
+}
+
+.text{
+ padding: 5px;
+ margin-left: 10px;
+}
+
+h1 a:hover {
+    text-decoration: none;
+}
+
+
